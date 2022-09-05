@@ -3,8 +3,14 @@
 ## Build Setup
 
 ```bash
+
+![image](https://user-images.githubusercontent.com/79454375/188510078-594e1d11-af36-4f55-8a08-71a3f58cf77d.png)
+
+
 # install dependencies
 $ npm install
+
+
 
 # serve with hot reload at localhost:3000
 $ npm run dev
