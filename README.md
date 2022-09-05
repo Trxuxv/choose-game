@@ -1,4 +1,4 @@
-# chooseGame
+# Choose Game
 
 ## Build Setup
 
