@@ -16,7 +16,7 @@
               magni culpaagni culpa
             </p>
           </div>
-          <a id="banner" href="home" class="banner mt-6 pt-4 rounded-full">
+          <a id="banner" href="initialization" class="banner mt-6 pt-3 rounded-full">
             <p class="blink_me mb-4">
               START GAME
             </p>
