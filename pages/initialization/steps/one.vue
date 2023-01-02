@@ -61,64 +61,79 @@
         </div>
       </div>
       <div class="w-full h-full rounded-b-lg flex">
-        <div class="w-1/2 h-full bg-yellow-200 px-4">
+        <div class="w-2/6 h-full bg-yellow-50 px-8 rounded-lg">
           <p class="blink_me text-center my-2 font-bold">Choose the features!</p>
           <div class="flex flex-col">
-            <h3 class="ml-2 text-xl font-black">Hair</h3>
+            <h3 class="ml-2 text-xl font-black">Female</h3>
             <span
               @mouseover="chooseOption('1')"
-              class="option flex items-center pl-2 w-24 rounded-full bg-yellow-100 cursor-pointer h-8 ml-4 mb-1 shadow-md"
-              >Option 1</span
+              class="option flex items-center pl-2 w-28 rounded-full bg-yellow-100 cursor-pointer h-8 ml-4 mb-1 shadow-md"
+              >Option <b class="text-white bg-blue-600 px-2 ml-2 rounded-full">1</b></span
             >
             <span
               @mouseover="chooseOption('2')"
-              class="option flex items-center pl-2 w-24 rounded-full bg-yellow-100 cursor-pointer h-8 ml-6 mb-1 shadow-md"
-              >Option 2</span
+              class="option flex items-center pl-2 w-28 rounded-full bg-yellow-100 cursor-pointer h-8 ml-6 mb-1 shadow-md"
+              >Option <b class="text-white bg-blue-600 px-2 ml-2 rounded-full">2</b></span
             >
             <span
               @mouseover="chooseOption('3')"
-              class="option flex items-center pl-2 w-24 rounded-full bg-yellow-100 cursor-pointer h-8 ml-8 mb-1 shadow-md"
-              >Option 3</span
+              class="option flex items-center pl-2 w-28 rounded-full bg-yellow-100 cursor-pointer h-8 ml-4 mb-1 shadow-md"
+              >Option <b class="text-white bg-blue-600 px-2 ml-2 rounded-full">3</b></span
             >
           </div>
           <br />
-          <h3 class="ml-4 text-xl font-black">Body</h3>
+          <h3 class="ml-4 text-xl font-black">Male</h3>
           <span
             @mouseover="chooseOption('4')"
-            class="option flex items-center pl-2 w-24 rounded-full bg-yellow-100 cursor-pointer h-8 ml-4 mb-1 shadow-md"
-            >Option 1</span
+            class="option flex items-center pl-2 w-28 rounded-full bg-yellow-100 cursor-pointer h-8 ml-4 mb-1 shadow-md"
+            >Option <b class="text-white bg-red-500 px-2 ml-2 rounded-full">4</b></span
           >
           <span
             @mouseover="chooseOption('5')"
-            class="option flex items-center pl-2 w-24 rounded-full bg-yellow-100 cursor-pointer h-8 ml-6 mb-1 shadow-md"
-            >Option 2</span
+            class="option flex items-center pl-2 w-28 rounded-full bg-yellow-100 cursor-pointer h-8 ml-6 mb-1 shadow-md"
+            >Option <b class="text-white bg-red-500 px-2 ml-2 rounded-full">5</b></span
           >
           <span
             @mouseover="chooseOption('6')"
-            class="option flex items-center pl-2 w-24 rounded-full bg-yellow-100 cursor-pointer h-8 ml-8 mb-1 shadow-md"
-            >Option 6</span
+            class="option flex items-center pl-2 w-28 rounded-full bg-yellow-100 cursor-pointer h-8 ml-4 mb-1 shadow-md"
+            >Option <b class="text-white bg-red-500 px-2 ml-2 rounded-full">6</b></span
           >
           <br />
-          <h3 class="ml-2 mt-3 text-xl font-black">Details</h3>
+          <h3 class="ml-2 mt-3 text-xl font-black">???</h3>
           <span
-            onclick="chooseOption()"
-            class="option flex items-center pl-2 w-24 rounded-full bg-yellow-100 cursor-pointer h-8 ml-4 mb-1 shadow-md"
-            >Option 1</span
+            @mouseover="chooseOption('7')"
+            class="option flex items-center pl-2 w-28 rounded-full bg-yellow-100 cursor-pointer h-8 ml-4 mb-1 shadow-md"
+            >Option
+            <b
+              class="text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-2 ml-2 rounded-full"
+              >7</b
+            ></span
           >
           <span
-            onclick="chooseOption()"
-            class="option flex items-center pl-2 w-24 rounded-full bg-yellow-100 cursor-pointer h-8 ml-6 mb-1 shadow-md"
-            >Option 2</span
+            @mouseover="chooseOption('8')"
+            class="option flex items-center pl-2 w-28 rounded-full bg-yellow-100 cursor-pointer h-8 ml-8 mb-1 shadow-md"
+            >Option
+            <b
+              class="text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-2 ml-2 rounded-full"
+              >8</b
+            ></span
           >
           <span
-            class="option flex items-center pl-2 w-24 rounded-full bg-yellow-100 cursor-pointer h-8 ml-8 mb-1 shadow-md"
-            >Option 3</span
+            @mouseover="chooseOption('9')"
+            class="option flex items-center pl-2 w-28 rounded-full bg-yellow-100 cursor-pointer h-8 ml-4 mb-1 shadow-md"
+            >Option
+            <b
+              class="text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-2 ml-2 rounded-full"
+              >9</b
+            ></span
           >
         </div>
-        <div class="w-2/3 h-full justify-center flex items-center">
+        <div class="w-4/6 h-full justify-center flex items-center">
           <div class="w-3/6 h-5/6">
+            <h3 class="text-center">{{ playerName }}</h3>
             <Transition name="slide-fade" mode="out-in">
               <img
+                class="bg-yellow-200 p-10 shadow-md rounded-full"
                 data-placement="bottom"
                 :key="charSelected"
                 :src="require(`./../../../static/media/chars/${charSelected}`)"
@@ -141,7 +156,7 @@ export default Vue.extend({
       charSelected: "1.png",
       segundos: 0,
       minutos: 0,
-      playerName: "",
+      playerName: localStorage.getItem("playerName"),
       expanded: false,
     };
   },
@@ -168,9 +183,9 @@ export default Vue.extend({
       }
     },
     chooseOption(option: string) {
-      var audio = new Audio(require('@/static/media/audio/test.mp3'));
-      audio.autoplay = true;
-      audio.play();
+      // var audio = new Audio(require('./../../../static/media/audio/test.mp3'));
+      // audio.autoplay = true;
+      // audio.play();
       this.charSelected = option + ".png";
     },
   },
@@ -226,9 +241,9 @@ export default Vue.extend({
 }
 
 .option:hover {
-  transition: all 0.1s ease-in-out;
-  transform: scale(1.3);
+  transition: all 0.2s ease-in-out;
   background: #674e40c6;
+  transform: translate(15%);
 }
 
 .slide-fade-enter-active {
