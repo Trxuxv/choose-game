@@ -10,7 +10,7 @@
         <div class="dots-bars-3 mt-4 ml-4 float-left"></div>
         <div class="mt-5 ml-4 float-left font-black">
           <span id="minuto">{{ minutos }}</span
-          ><span>:</span><span id="segundo">{{ segundos }}</span>
+          ><span>m</span><span id="segundo">{{ segundos }}</span>
         </div>
         <div class="float-right flex pt-2 pr-2">
           <div class="rounded-full bg-yellow-300 p-1 cursor-pointer">
@@ -127,13 +127,31 @@
               >9</b
             ></span
           >
+          <span
+          @mouseover="chooseOption('10')"
+          class="option flex items-center pl-2 w-28 rounded-full bg-yellow-100 cursor-pointer h-8 ml-8 mb-1 shadow-md"
+          >Option
+          <b
+            class="text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-2 ml-2 rounded-full"
+            >10</b
+          ></span
+        >   <span
+        @mouseover="chooseOption('11')"
+        
+        class="option flex items-center pl-2 w-28 rounded-full bg-yellow-100 cursor-pointer h-8 ml-4 mb-1 shadow-md"
+        >Option
+        <b
+          class="text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-2 ml-2 rounded-full"
+          >11</b
+        ></span
+      >
         </div>
         <div class="w-4/6 h-full justify-center flex items-center">
           <div class="w-3/6 h-5/6">
             <h3 class="text-center">{{ playerName }}</h3>
             <Transition name="slide-fade" mode="out-in">
               <img
-                class="bg-yellow-200 p-10 shadow-md rounded-full"
+                class="pt-14 px-14"
                 data-placement="bottom"
                 :key="charSelected"
                 :src="require(`./../../../static/media/chars/${charSelected}`)"
