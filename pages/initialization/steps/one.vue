@@ -60,6 +60,73 @@
           </a>
         </div>
       </div>
+      <div class="w-full h-full rounded-b-lg flex">
+        <div class="w-1/2 h-full bg-yellow-200 px-4">
+          <p class="blink_me text-center my-2 font-bold">Choose the features!</p>
+          <div class="flex flex-col">
+            <h3 class="ml-2 text-xl font-black">Hair</h3>
+            <span
+              @mouseover="chooseOption('1')"
+              class="option flex items-center pl-2 w-24 rounded-full bg-yellow-100 cursor-pointer h-8 ml-4 mb-1 shadow-md"
+              >Option 1</span
+            >
+            <span
+              @mouseover="chooseOption('2')"
+              class="option flex items-center pl-2 w-24 rounded-full bg-yellow-100 cursor-pointer h-8 ml-6 mb-1 shadow-md"
+              >Option 2</span
+            >
+            <span
+              @mouseover="chooseOption('3')"
+              class="option flex items-center pl-2 w-24 rounded-full bg-yellow-100 cursor-pointer h-8 ml-8 mb-1 shadow-md"
+              >Option 3</span
+            >
+          </div>
+          <br />
+          <h3 class="ml-4 text-xl font-black">Body</h3>
+          <span
+            @mouseover="chooseOption('4')"
+            class="option flex items-center pl-2 w-24 rounded-full bg-yellow-100 cursor-pointer h-8 ml-4 mb-1 shadow-md"
+            >Option 1</span
+          >
+          <span
+            @mouseover="chooseOption('5')"
+            class="option flex items-center pl-2 w-24 rounded-full bg-yellow-100 cursor-pointer h-8 ml-6 mb-1 shadow-md"
+            >Option 2</span
+          >
+          <span
+            @mouseover="chooseOption('6')"
+            class="option flex items-center pl-2 w-24 rounded-full bg-yellow-100 cursor-pointer h-8 ml-8 mb-1 shadow-md"
+            >Option 6</span
+          >
+          <br />
+          <h3 class="ml-2 mt-3 text-xl font-black">Details</h3>
+          <span
+            onclick="chooseOption()"
+            class="option flex items-center pl-2 w-24 rounded-full bg-yellow-100 cursor-pointer h-8 ml-4 mb-1 shadow-md"
+            >Option 1</span
+          >
+          <span
+            onclick="chooseOption()"
+            class="option flex items-center pl-2 w-24 rounded-full bg-yellow-100 cursor-pointer h-8 ml-6 mb-1 shadow-md"
+            >Option 2</span
+          >
+          <span
+            class="option flex items-center pl-2 w-24 rounded-full bg-yellow-100 cursor-pointer h-8 ml-8 mb-1 shadow-md"
+            >Option 3</span
+          >
+        </div>
+        <div class="w-2/3 h-full justify-center flex items-center">
+          <div class="w-3/6 h-5/6">
+            <Transition name="slide-fade" mode="out-in">
+              <img
+                data-placement="bottom"
+                :key="charSelected"
+                :src="require(`./../../../static/media/chars/${charSelected}`)"
+              />
+            </Transition>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -71,6 +138,7 @@ export default Vue.extend({
   name: "Home",
   data() {
     return {
+      charSelected: "1.png",
       segundos: 0,
       minutos: 0,
       playerName: "",
@@ -99,6 +167,12 @@ export default Vue.extend({
         this.segundos = 0;
       }
     },
+    chooseOption(option: string) {
+      var audio = new Audio(require('@/static/media/audio/test.mp3'));
+      audio.autoplay = true;
+      audio.play();
+      this.charSelected = option + ".png";
+    },
   },
 });
 </script>
@@ -106,12 +180,6 @@ export default Vue.extend({
 @font-face {
   font-family: "JetBrains";
   src: url("./../../../static/fonts/JetBrainsMonoNL-Regular.ttf") format("truetype");
-}
-
-@keyframes blinker {
-  50% {
-    opacity: 0;
-  }
 }
 
 .bg-white-op {
@@ -155,6 +223,35 @@ export default Vue.extend({
   top: 0;
   animation: db3-1 1.5s linear infinite alternate,
     db3-2 0.75s cubic-bezier(0, 200, 0.8, 200) infinite;
+}
+
+.option:hover {
+  transition: all 0.1s ease-in-out;
+  transform: scale(1.3);
+  background: #674e40c6;
+}
+
+.slide-fade-enter-active {
+  transition: all 0.4s ease-in-out;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.3s ease-in-out;
+}
+
+.slide-fade-enter-from {
+  transform: translate(50%);
+  opacity: 0.5;
+}
+.slide-fade-leave-to {
+  transform: translate(-60%);
+  opacity: 0;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
 }
 
 @keyframes db3-1 {
