@@ -104,7 +104,7 @@ export default Vue.extend({
   },
   methods: {
     start() {
-      this.$router.push("initialization/steps/one");
+      this.$router.push("/initialization/steps/one");
       localStorage.setItem("playerName", this.playerName);
       this.startTime();
     },

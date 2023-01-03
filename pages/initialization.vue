@@ -23,7 +23,7 @@ export default Vue.extend({
   }
 }
 
-.body {
+* {
   font-family: "JetBrains";
 }
 </style>
