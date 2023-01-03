@@ -72,7 +72,7 @@
         >
           <video
             id="myVideo"
-            class="h-5/6 rounded-md bg-gray-700 p-1"
+            class="w-3/5 h-5/6 rounded-md bg-transparent"
             autoplay
           >
             <source
