@@ -126,7 +126,6 @@
             <div
               class="cursor-pointer mt-4 text-xs font-bold w-14 h-14 bg-black text-white rounded-full flex items-center justify-center hover:bg-gray-500"
             >
-              SKIP
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"

@@ -104,7 +104,7 @@
             @click="commitChar('6')"
             @mouseover="chooseOption('6')"
            class="option text-sm flex items-center px-3 w-auto rounded-full bg-yellow-100 cursor-pointer h-8 ml-4 mb-1 shadow-md"
-            >Option <b class="text-white bg-red-500 px-2 ml-2 rounded-full">6</b></span
+            >Solaire <b class="text-white bg-red-500 px-2 ml-2 rounded-full">6</b></span
           >
           <br />
           <h3 class="ml-2 mt-3 text-xl font-black">???</h3>
@@ -122,7 +122,7 @@
             @click="commitChar('8')"
             @mouseover="chooseOption('8')"
            class="option text-sm flex items-center px-3 w-auto rounded-full bg-yellow-100 cursor-pointer h-8 ml-6 mb-1 shadow-md"
-            >Option
+            >Bugs Bunny
             <b
               class="text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-2 ml-2 rounded-full"
               >8</b
@@ -142,7 +142,7 @@
             @click="commitChar('10')"
             @mouseover="chooseOption('10')"
            class="option text-sm flex items-center px-3 w-auto rounded-full bg-yellow-100 cursor-pointer h-8 ml-6 mb-1 shadow-md"
-            >Arnold
+            >Clarence
             <b
               class="text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-2 ml-2 rounded-full"
               >10</b
